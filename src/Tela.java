@@ -1,3 +1,6 @@
+import java.awt.Image;
+import java.awt.Toolkit;
+import java.net.URL;
 import java.util.Arrays;
 import java.util.Random;
 
@@ -5,6 +8,9 @@ public class Tela extends javax.swing.JFrame {
 
     public Tela() {
         initComponents();
+        URL url = getClass().getResource("/img/logo.png");
+        Image icon = Toolkit.getDefaultToolkit().getImage(url);
+        this.setIconImage(icon);
     }
 
     @SuppressWarnings("unchecked")
@@ -15,7 +21,6 @@ public class Tela extends javax.swing.JFrame {
         jrbMegaSena = new javax.swing.JRadioButton();
         jrbQuina = new javax.swing.JRadioButton();
         jrbLotofacil = new javax.swing.JRadioButton();
-        jbSortear = new javax.swing.JToggleButton();
         jLabel4 = new javax.swing.JLabel();
         jrbLotomania = new javax.swing.JRadioButton();
         jrbDuplaSena = new javax.swing.JRadioButton();
@@ -27,9 +32,10 @@ public class Tela extends javax.swing.JFrame {
         jLabel12 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
         jlSorteados = new javax.swing.JLabel();
+        jbSortear = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Loterias");
+        setTitle("Loterias Una");
         setFocusCycleRoot(false);
         setResizable(false);
 
@@ -43,14 +49,7 @@ public class Tela extends javax.swing.JFrame {
         jrbLotofacil.setText("LOTOFÁCIL");
         jrbLotofacil.setToolTipText("");
 
-        jbSortear.setText("SORTEAR");
-        jbSortear.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbSortearActionPerformed(evt);
-            }
-        });
-
-        jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Segoe UI", 2, 18)); // NOI18N
         jLabel4.setText("NÚMEROS SORTEADOS");
 
         bgLoteria.add(jrbLotomania);
@@ -74,6 +73,15 @@ public class Tela extends javax.swing.JFrame {
 
         jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/dia-de-sorte.png"))); // NOI18N
 
+        jlSorteados.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+
+        jbSortear.setText("SORTEAR");
+        jbSortear.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbSortearActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -91,7 +99,7 @@ public class Tela extends javax.swing.JFrame {
                                 .addComponent(jrbLotomania)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jLabel11)))
-                        .addGap(18, 18, 18)
+                        .addGap(22, 22, 22)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jrbDuplaSena)
@@ -101,7 +109,7 @@ public class Tela extends javax.swing.JFrame {
                                 .addComponent(jrbMegaSena)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jLabel10)))
-                        .addGap(18, 18, 18)
+                        .addGap(20, 20, 20)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jrbLotofacil)
@@ -111,7 +119,7 @@ public class Tela extends javax.swing.JFrame {
                                 .addComponent(jrbQuina)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jLabel8)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE)
                         .addComponent(jbSortear))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -123,38 +131,37 @@ public class Tela extends javax.swing.JFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(jrbDiaDeSorte)
-                                .addComponent(jLabel13))
+                        .addContainerGap()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jrbDiaDeSorte, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                 .addComponent(jrbDuplaSena)
-                                .addComponent(jLabel12))
+                                .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                 .addComponent(jrbLotofacil)
-                                .addComponent(jLabel9)))
+                                .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLabel13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                 .addComponent(jrbMegaSena)
-                                .addComponent(jLabel10))
-                            .addComponent(jrbQuina)
-                            .addComponent(jLabel8)
+                                .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jrbLotomania)
-                                    .addComponent(jLabel11))
-                                .addGap(14, 14, 14)
-                                .addComponent(jLabel4))))
+                                    .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jLabel4))
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(jLabel8, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jrbQuina, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jbSortear)
-                        .addGap(46, 46, 46)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGap(37, 37, 37)
+                        .addComponent(jbSortear)))
                 .addComponent(jlSorteados)
-                .addContainerGap(26, Short.MAX_VALUE))
+                .addContainerGap(29, Short.MAX_VALUE))
         );
 
         pack();
@@ -169,7 +176,7 @@ public class Tela extends javax.swing.JFrame {
         int[] lotofacil = new int[15];
         int[] lotomania = new int[20];
         int[] mega = new int[6];
-        int[] quina = new int[5];   
+        int[] quina = new int[5];
 
         if(jrbDiaDeSorte.isSelected()) {
             for(i=0; i<diaDeSorte.length; i++) {
@@ -182,17 +189,17 @@ public class Tela extends javax.swing.JFrame {
                     }
                 }
             }
-        
+
             for(i=0; i<diaDeSorte.length; i++) {
                 for(j=i+1; j<diaDeSorte.length; j++) {
                     if(diaDeSorte[i] > diaDeSorte[j]) {
                         num = diaDeSorte[i];
                         diaDeSorte[i] = diaDeSorte[j];
                         diaDeSorte[j] = num;
-                    }  
+                    }
                 }
             }
-        
+
             for(i=0; i<diaDeSorte.length; i++) {
                 jlSorteados.setText(Arrays.toString(diaDeSorte));
             }
@@ -207,17 +214,17 @@ public class Tela extends javax.swing.JFrame {
                     }
                 }
             }
-        
+
             for(i=0; i<duplaSena.length; i++) {
                 for(j=i+1; j<duplaSena.length; j++) {
                     if(duplaSena[i] > duplaSena[j]) {
                         num = duplaSena[i];
                         duplaSena[i] = duplaSena[j];
                         duplaSena[j] = num;
-                    }  
+                    }
                 }
             }
-        
+
             for(i=0; i<duplaSena.length; i++) {
                 jlSorteados.setText(Arrays.toString(duplaSena));
             }
@@ -232,17 +239,17 @@ public class Tela extends javax.swing.JFrame {
                     }
                 }
             }
-        
+
             for(i=0; i<lotofacil.length; i++) {
                 for(j=i+1; j<lotofacil.length; j++) {
                     if(lotofacil[i] > lotofacil[j]) {
                         num = lotofacil[i];
                         lotofacil[i] = lotofacil[j];
                         lotofacil[j] = num;
-                    }  
+                    }
                 }
             }
-        
+
             for(i=0; i<lotofacil.length; i++) {
                 jlSorteados.setText(Arrays.toString(lotofacil));
             }
@@ -257,17 +264,17 @@ public class Tela extends javax.swing.JFrame {
                     }
                 }
             }
-        
+
             for(i=0; i<lotomania.length; i++) {
                 for(j=i+1; j<lotomania.length; j++) {
                     if(lotomania[i] > lotomania[j]) {
                         num = lotomania[i];
                         lotomania[i] = lotomania[j];
                         lotomania[j] = num;
-                    }  
+                    }
                 }
             }
-        
+
             for(i=0; i<lotomania.length; i++) {
                 jlSorteados.setText(Arrays.toString(lotomania));
             }
@@ -282,17 +289,17 @@ public class Tela extends javax.swing.JFrame {
                     }
                 }
             }
-        
+
             for(i=0; i<mega.length; i++) {
                 for(j=i+1; j<mega.length; j++) {
                     if(mega[i] > mega[j]) {
                         num = mega[i];
                         mega[i] = mega[j];
                         mega[j] = num;
-                    }  
+                    }
                 }
             }
-        
+
             for(i=0; i<mega.length; i++) {
                 jlSorteados.setText(Arrays.toString(mega));
             }
@@ -307,17 +314,17 @@ public class Tela extends javax.swing.JFrame {
                     }
                 }
             }
-        
+
             for(i=0; i<quina.length; i++) {
                 for(j=i+1; j<quina.length; j++) {
                     if(quina[i] > quina[j]) {
                         num = quina[i];
                         quina[i] = quina[j];
                         quina[j] = num;
-                    }  
+                    }
                 }
             }
-        
+
             for(i=0; i<quina.length; i++) {
                 jlSorteados.setText(Arrays.toString(quina));
             }
@@ -328,30 +335,6 @@ public class Tela extends javax.swing.JFrame {
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Tela.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Tela.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Tela.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Tela.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new Tela().setVisible(true);
@@ -368,7 +351,7 @@ public class Tela extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JToggleButton jbSortear;
+    private javax.swing.JButton jbSortear;
     private javax.swing.JLabel jlSorteados;
     private javax.swing.JRadioButton jrbDiaDeSorte;
     private javax.swing.JRadioButton jrbDuplaSena;
